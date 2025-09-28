@@ -32,6 +32,11 @@ public class Craps {
     public static void playCraps() {
         System.out.println("Klar til at begynde? ('ja/nej')");
         String answer = scanner.nextLine();
+        while (answer.equalsIgnoreCase("nej")) {
+            System.out.println("Okay, hvad med nu? ('ja/nej')");
+            answer = scanner.nextLine();
+        }
+
         while (!answer.equalsIgnoreCase("nej")) {
             int first = rollTwoDice();
             System.out.println("Come out roll: " + first + ".");
@@ -45,7 +50,7 @@ public class Craps {
                 System.out.println("Point er sat til: " + point + ". Der kastes indtil point eller 7.");
                 boolean gotPoint = rollForPoint(point);
                 if (gotPoint) {
-                    System.out.println("Resultat: DU VINDER (du rullede dit point igen.");
+                    System.out.println("Resultat: DU VINDER (du rullede dit point igen).");
                 } else {
                     System.out.println("Resultat: DU TABER (du rullede 7.");
                 }
@@ -54,6 +59,7 @@ public class Craps {
             System.out.println("Vil du spille igen? ('ja/nej')");
             answer = scanner.nextLine();
         }
+
     }
     public static boolean rollForPoint (int point) {
         while (true) {
