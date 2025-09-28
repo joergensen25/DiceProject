@@ -21,11 +21,11 @@ public class Craps {
         System.out.println("Spilleren ruller to terninger. Udfaldet af et kast er " +
                 "summen af øjne på de to terninger.");
         System.out.println("Det første kast er 'come out roll.");
-        System.out.println("Spilleren vinder med det samme, hvis første kast er 7 eller 11");
-        System.out.println("Spilleren taber med det samme, hvis første kast er 2, 3 eller 12");
+        System.out.println("Spilleren vinder med det samme, hvis første kast er 7 eller 11.");
+        System.out.println("Spilleren taber med det samme, hvis første kast er 2, 3 eller 12.");
         System.out.println("Slår spilleren et andet tal mellem 1-12, er dette spillerens 'point'.");
-        System.out.println("Spillet fortsætter, indtil spilleren slår 7 eller sit 'point'");
-        System.out.println("Slår spilleren sit 'point', vinder spilleren. Slår spilleren 7, taber spilleren");
+        System.out.println("Spillet fortsætter, indtil spilleren slår 7 eller sit 'point'.");
+        System.out.println("Slår spilleren sit 'point', vinder spilleren. Slår spilleren 7, taber spilleren.");
         System.out.println("=====================================================");
     }
 
