@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Craps {
     public static final Scanner scanner = new Scanner(System.in);
 
+    int wins = 0;
+    int losses = 0;
+
     public static void main(String[] args) {
         System.out.println("Velkommen til spillet Craps.");
         printRules();
@@ -36,7 +39,6 @@ public class Craps {
             System.out.println("Okay, hvad med nu? ('ja/nej')");
             answer = scanner.nextLine();
         }
-
         while (!answer.equalsIgnoreCase("nej")) {
             int first = rollTwoDice();
             System.out.println("Come out roll: " + first + ".");
