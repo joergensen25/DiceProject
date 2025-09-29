@@ -5,17 +5,19 @@ import java.util.Scanner;
 public class Craps {
     public static final Scanner scanner = new Scanner(System.in);
 
-    int wins = 0;
-    int losses = 0;
+    private static int wins = 0;
+    private static int losses = 0;
 
     public static void main(String[] args) {
-        System.out.println("Velkommen til spillet Craps.");
+        System.out.println("Velkommen til spillet Craps. Lavet af Asger, Rasmus og Rasmus");
         printRules();
         System.out.println();
 
         playCraps();
 
         System.out.println();
+
+        printStatistics();
         System.out.println("Tak for at spille Craps.");
     }
     private static void printRules() {
@@ -35,6 +37,7 @@ public class Craps {
     public static void playCraps() {
         System.out.println("Klar til at begynde? ('ja/nej')");
         String answer = scanner.nextLine();
+
         while (answer.equalsIgnoreCase("nej")) {
             System.out.println("Okay, hvad med nu? ('ja/nej')");
             answer = scanner.nextLine();
@@ -45,16 +48,20 @@ public class Craps {
 
             if (first == 7 || first == 11) {
                 System.out.println("Resultat: DU VINDER (7 eller 11 på come out roll).");
+                wins++;
             } else if (first == 2 || first == 3 || first == 12) {
                 System.out.println("Resultat: DU TABER (2, 3 eller 12 på come out roll).");
+                losses++;
             } else {
                 int point = first;
                 System.out.println("Point er sat til: " + point + ". Der kastes indtil point eller 7.");
                 boolean gotPoint = rollForPoint(point);
                 if (gotPoint) {
                     System.out.println("Resultat: DU VINDER (du rullede dit point igen).");
+                    wins++;
                 } else {
                     System.out.println("Resultat: DU TABER (du rullede 7.");
+                    losses++;
                 }
             }
             System.out.println();
@@ -88,5 +95,13 @@ public class Craps {
     private static void waitForEnter() {
         System.out.println("Klar til at slå? (tryk på Enter)");
         scanner.nextLine();
+    }
+
+    private static void printStatistics() {
+        System.out.println("\nResults: ");
+        System.out.println("---------");
+        System.out.println("Antal sejre: " + wins);
+        System.out.println("Antal tabte: " + losses);
+
     }
 }

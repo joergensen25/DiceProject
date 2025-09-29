@@ -10,7 +10,7 @@ public class RollTwoDice {
     private static int[] faceCounts = new int[6];
 
     public static void main(String[] args) {
-        System.out.println("Velkommen til spillet, rul to terninger.");
+        System.out.println("Velkommen til spillet, rul to terninger. Lavet af Asger, Rasmus og Rasmus");
         printRules();
         System.out.println();
 
