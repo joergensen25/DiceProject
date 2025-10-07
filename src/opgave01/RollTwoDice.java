@@ -55,7 +55,7 @@ public class RollTwoDice {
         return dice;
     }
 
-    private static void updateStatistics(int[]faces) {
+    private static void updateStatistics(int[] faces) {
         rollCount++;
         totalSum += faces[0] + faces[1];
         if (faces[0] == faces[1]) {
@@ -66,8 +66,8 @@ public class RollTwoDice {
             maxSum = sum;
         }
         for (int i = 0; i < faces.length; i++) {
-            int face = faces[i];
-            faceCounts[face-1]++;
+            //I kan inline variablen her, da den kun bliver brugt en gang.
+            faceCounts[faces[i] - 1]++;
         }
 
     }
@@ -81,6 +81,7 @@ public class RollTwoDice {
         System.out.printf("%17s %4d\n", "Største slag opnået er:", maxSum);
         System.out.println();
 
+        //Måske en for løkke til 6 gentagelser
         System.out.println("Antal 1'ere: " + faceCounts[0]);
         System.out.println("Antal 2'ere: " + faceCounts[1]);
         System.out.println("Antal 3'ere: " + faceCounts[2]);
@@ -88,6 +89,9 @@ public class RollTwoDice {
         System.out.println("Antal 5'ere: " + faceCounts[4]);
         System.out.println("Antal 6'ere: " + faceCounts[5]);
 
+        for (int index = 0; index < faceCounts.length; index++) {
+            System.out.println("Antal "+ (index + 1) +"'ere: " + faceCounts[index]);
+        }
 
     }
 

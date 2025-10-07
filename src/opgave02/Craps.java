@@ -53,9 +53,10 @@ public class Craps {
                 System.out.println("Resultat: DU TABER (2, 3 eller 12 på come out roll).");
                 losses++;
             } else {
-                int point = first;
-                System.out.println("Point er sat til: " + point + ". Der kastes indtil point eller 7.");
-                boolean gotPoint = rollForPoint(point);
+                //Ingen grund til at introducerer en ny variable
+                System.out.println("Point er sat til: " + first + ". Der kastes indtil point eller 7.");
+                //Højreklik på 'gotPoint' -> Refactor -> Inline variable
+                boolean gotPoint = rollForPoint(first);
                 if (gotPoint) {
                     System.out.println("Resultat: DU VINDER (du rullede dit point igen).");
                     wins++;
